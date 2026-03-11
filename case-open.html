@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытие кейса</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <div class="balance-container">
+                <span class="balance-label">Баланс</span>
+                <span class="balance-value" id="balance">0 ⭐</span>
+            </div>
+        </header>
+
+        <main class="case-page">
+            <div class="case-header">
+                <div class="case-image" id="caseImage">📦</div>
+                <h1 id="caseTitle">Кейс</h1>
+            </div>
+
+            <!-- Горизонтальная прокрутка призов -->
+            <div class="prizes-scroll">
+                <div class="prizes-container" id="prizesList">
+                    <!-- Сюда будут добавляться призы через JS -->
+                </div>
+            </div>
+
+            <!-- Рулетка -->
+            <div class="slot-machine">
+                <div class="window">
+                    <div class="reel" id="reel">
+                        <!-- Сюда будут добавляться призы для прокрутки -->
+                    </div>
+                </div>
+                <div class="pointer">▼</div>
+            </div>
+
+            <!-- Кнопка кручения -->
+            <button class="primary-btn" onclick="spinCase()" id="spinBtn">
+                Крутить за <span id="caseCost">0</span> ⭐
+            </button>
+        </main>
+    </div>
+
+    <!-- Модальное окно выигрыша -->
+    <div id="winModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-image" id="winImage">🎁</div>
+            <h2 class="modal-title">Вы выиграли!</h2>
+            <p class="modal-text" id="winText"></p>
+            <button class="primary-btn" onclick="continueAfterWin()">
+                Продолжить
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="case-open.js"></script>
+</body>
+</html>

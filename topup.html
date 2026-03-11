@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пополнение баланса</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <div class="balance-container">
+                <span class="balance-label">Баланс</span>
+                <span class="balance-value" id="balance">0 ⭐</span>
+            </div>
+        </header>
+
+        <main class="main">
+            <h1 class="welcome-title">Пополнить баланс</h1>
+            
+            <div class="info-card">
+                <p>Покупайте звёзды и тратьте их на платные кейсы. Звёзды списываются с вашего аккаунта Telegram и моментально зачисляются на игровой баланс.</p>
+            </div>
+            
+            <div class="stars-packages">
+                <h2 class="section-title">Выберите пакет</h2>
+                
+                <div class="package-grid">
+                    <!-- Пакет 10 звёзд (МИНИМАЛЬНЫЙ) -->
+                    <div class="package-card minimal" onclick="buyStars(10)">
+                        <div class="package-amount">10 ⭐</div>
+                        <div class="package-price">минимальный</div>
+                        <div class="package-bonus"></div>
+                        <button class="package-btn">Купить за 10 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 50 звёзд -->
+                    <div class="package-card" onclick="buyStars(50)">
+                        <div class="package-amount">50 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus"></div>
+                        <button class="package-btn">Купить за 50 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 100 звёзд -->
+                    <div class="package-card" onclick="buyStars(100)">
+                        <div class="package-amount">100 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus"></div>
+                        <button class="package-btn">Купить за 100 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 250 звёзд -->
+                    <div class="package-card" onclick="buyStars(250)">
+                        <div class="package-amount">250 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus"></div>
+                        <button class="package-btn">Купить за 250 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 500 звёзд (ПОПУЛЯРНЫЙ) -->
+                    <div class="package-card popular" onclick="buyStars(500)">
+                        <div class="popular-badge">Популярное</div>
+                        <div class="package-amount">500 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus">+25 бонус</div>
+                        <button class="package-btn">Купить за 500 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 1000 звёзд -->
+                    <div class="package-card" onclick="buyStars(1000)">
+                        <div class="package-amount">1000 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus">+75 бонус</div>
+                        <button class="package-btn">Купить за 1000 ⭐</button>
+                    </div>
+                    
+                    <!-- Пакет 2500 звёзд -->
+                    <div class="package-card" onclick="buyStars(2500)">
+                        <div class="package-amount">2500 ⭐</div>
+                        <div class="package-price">⭐</div>
+                        <div class="package-bonus">+250 бонус</div>
+                        <button class="package-btn">Купить за 2500 ⭐</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card history-card">
+                <h3 class="history-title">История пополнений</h3>
+                <div id="purchaseHistory" class="history-list">
+                    <!-- Сюда будут добавляться покупки -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Нижняя навигация -->
+        <nav class="bottom-nav">
+            <button class="nav-btn" onclick="goToHome()">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Главная</span>
+            </button>
+            <button class="nav-btn" onclick="goToProfile()">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">Профиль</span>
+            </button>
+            <button class="nav-btn active" onclick="goToTopUp()">
+                <span class="nav-icon">⭐</span>
+                <span class="nav-text">Пополнить</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="topup.js"></script>
+</body>
+</html>

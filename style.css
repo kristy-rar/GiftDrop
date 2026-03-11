@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #404040;
+}
+
+.balance-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.balance-label {
+    font-size: 12px;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.balance-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #404040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 20px;
+}
+
+/* Главный контент */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.welcome-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* Сетка кейсов */
+.cases-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.case-card {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 1px solid #404040;
+}
+
+.case-card:hover {
+    transform: translateY(-2px);
+    background-color: #333333;
+}
+
+.case-image {
+    width: 60px;
+    height: 60px;
+    background-color: #404040;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.case-info {
+    flex: 1;
+}
+
+.case-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.case-desc {
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.case-arrow {
+    font-size: 20px;
+    color: #3b82f6;
+}
+
+/* Нижняя навигация */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    background-color: #2d2d2d;
+    border-top: 1px solid #404040;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.nav-btn.active {
+    opacity: 1;
+}
+
+.nav-icon {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.nav-text {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.nav-btn.active .nav-icon,
+.nav-btn.active .nav-text {
+    color: #3b82f6;
+}
+
+/* Кнопки */
+.primary-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.primary-btn:hover {
+    background-color: #3b82f6;
+}
+
+.primary-btn:disabled {
+    background-color: #404040;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #404040;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.secondary-btn:hover {
+    background-color: #333333;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Модальное окно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    border: 1px solid #404040;
+}
+
+.modal-image {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.modal-text {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+/* Страница кейса */
+.case-page {
+    flex: 1;
+    padding: 20px;
+}
+
+.case-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.case-header h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* Горизонтальная прокрутка призов */
+.prizes-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.prizes-container {
+    display: inline-flex;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.prize-preview {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+}
+
+.prize-preview-image {
+    width: 80px;
+    height: 80px;
+    background-color: #404040;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.prize-preview-name {
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.prize-preview-chance {
+    font-size: 12px;
+    color: #3b82f6;
+}
+
+/* Рулетка */
+.slot-machine {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #404040;
+}
+
+.window {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+    height: 120px;
+    border: 1px solid #404040;
+}
+
+.reel {
+    display: flex;
+    gap: 15px;
+    transition: transform 2s cubic-bezier(0.25, 0.1, 0.15, 1);
+}
+
+.prize-item {
+    min-width: 80px;
+    height: 80px;
+    background-color: #333333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border: 1px solid #404040;
+    flex-shrink: 0;
+}
+
+.pointer {
+    text-align: center;
+    color: #3b82f6;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Профиль */
+.profile-page {
+    flex: 1;
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #404040;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto 15px;
+}
+
+.profile-name {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.profile-stats {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #404040;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #404040;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #a0a0a0;
+}
+
+.stat-value {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.inventory {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #404040;
+}
+
+.inventory-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+}
+
+.inventory-item {
+    aspect-ratio: 1;
+    background-color: #404040;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+/* Страница пополнения */
+.info-card {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #404040;
+}
+
+.info-card p {
+    color: #a0a0a0;
+    line-height: 1.5;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.stars-packages {
+    margin-bottom: 30px;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.package-card {
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #404040;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+}
+
+.package-card.minimal {
+    border: 2px solid #10b981;
+    background: linear-gradient(145deg, #2d2d2d, #1e2d2a);
+}
+
+.package-card.popular {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.package-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.package-price {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+.package-bonus {
+    font-size: 14px;
+    color: #10b981;
+    margin-bottom: 15px;
+    min-height: 20px;
+}
+
+.package-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.package-btn:hover {
+    background-color: #2563eb;
+}
+
+.minimal .package-btn {
+    background-color: #10b981;
+}
+
+.minimal .package-btn:hover {
+    background-color: #059669;
+}
+
+.history-card {
+    margin-top: 20px;
+}
+
+.history-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #333333;
+    border-radius: 8px;
+    border: 1px solid #404040;
+}
+
+.history-item-date {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.history-item-amount {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.empty-history {
+    color: #a0a0a0;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Шапка с кнопкой пополнения */
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.topup-btn {
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.topup-btn:hover {
+    background-color: #2563eb;
+}
+
+.topup-icon {
+    font-size: 16px;
+}
+
+.topup-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}

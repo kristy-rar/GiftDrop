@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор кейса</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <div class="balance-container">
+                <span class="balance-label">Баланс</span>
+                <span class="balance-value" id="balance">0 ⭐</span>
+            </div>
+        </header>
+
+        <main class="main">
+            <h1 class="welcome-title">Выберите кейс</h1>
+            
+            <div class="cases-grid">
+                <!-- Кейс Новичок -->
+                <div class="case-card" onclick="selectCase('novice')">
+                    <div class="case-image">📦</div>
+                    <div class="case-info">
+                        <h2 class="case-title">Кейс «Новичок»</h2>
+                        <p class="case-desc">Стоимость: 10 ⭐</p>
+                    </div>
+                    <div class="case-arrow">10⭐</div>
+                </div>
+
+                <!-- Кейс Профи -->
+                <div class="case-card" onclick="selectCase('pro')">
+                    <div class="case-image">💎</div>
+                    <div class="case-info">
+                        <h2 class="case-title">Кейс «Профи»</h2>
+                        <p class="case-desc">Стоимость: 100 ⭐</p>
+                    </div>
+                    <div class="case-arrow">100⭐</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="roulette.js"></script>
+</body>
+</html>

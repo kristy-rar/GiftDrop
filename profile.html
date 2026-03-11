@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <div class="balance-container">
+                <span class="balance-label">Баланс</span>
+                <span class="balance-value" id="balance">0 ⭐</span>
+            </div>
+        </header>
+
+        <main class="profile-page">
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar">👤</div>
+                <h2 class="profile-name" id="profileName">Игрок</h2>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Всего открыто кейсов:</span>
+                    <span class="stat-value" id="totalOpened">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Всего выиграно звёзд:</span>
+                    <span class="stat-value" id="totalWon">0 ⭐</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">NFT в коллекции:</span>
+                    <span class="stat-value" id="nftCount">0</span>
+                </div>
+            </div>
+
+            <div class="inventory">
+                <h3 class="inventory-title">Инвентарь</h3>
+                <div class="inventory-grid" id="inventory">
+                    <!-- Сюда будут добавляться NFT -->
+                </div>
+            </div>
+        </main>
+
+<nav class="bottom-nav">
+    <button class="nav-btn" onclick="goToHome()">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Главная</span>
+    </button>
+    <button class="nav-btn" onclick="goToProfile()">
+        <span class="nav-icon">👤</span>
+        <span class="nav-text">Профиль</span>
+    </button>
+    <button class="nav-btn" onclick="goToTopUp()">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-text">Пополнить</span>
+    </button>
+</nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
